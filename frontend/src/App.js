@@ -6,7 +6,7 @@ import './index.css';
 function App() {
   return (
     <BrowserRouter>
-    <main className="color: bg-green-200">
+    <main className="color: bg-green-200 h-full">
       <Header />
       <Routes />
     </main>
