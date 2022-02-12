@@ -31,30 +31,28 @@ const Main = () => {
   if (loading) return <p>Carregando...</p>
 
   return (
-    <main className="h-screen flex flex-col items-center">
-      <h1 className="m-6">Perfil de { user }</h1>
+    <main>
+      <h1>Perfil de { user }</h1>
 
       {
       !messages ? 
-        <p className="text-center">
+        <p>
           Seja o primeiro a escrever uma mensagem para { user }
         </p> :
-        <div className="w-2/3">
+        <div>
           { messages.map(({ name, message, _id }) => <MessageCard key={_id} name={ name } message={ message } />) }
         </div>
       }
 
-      <form method="POST" className="flex flex-col">
+      <form method="POST">
         <input
           placeholder="Nome"
           onChange={ ({ target: { value } }) => setName(value || 'Anônimo') }
-          className="my-3 w-full py-2 px-2"
         />
         <textarea
           type="text"
           placeholder="Mensagem"
           onChange={ ({ target: { value } }) => setMessage(value) }
-          className="my-3 w-full py-6 px-2"
         />
         <button
           type="button"
